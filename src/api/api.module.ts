@@ -1,13 +1,14 @@
 import { Module } from '@nestjs/common';
 import { UserModule } from './user/user.module';
-import { UserController } from './controllers/user/user.controller';
-import { AuthController } from './controllers/auth/auth.controller';
+import { UserController } from './user/user.controller';
 import { TypeormService } from './services/typeorm/typeorm.service';
-import { UserService } from './services/user/user.service';
+import { AuthController } from './auth/auth.controller';
+import { AuthService } from './auth/auth.service';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [UserModule],
+  imports: [UserModule, AuthModule],
   controllers: [UserController, AuthController],
-  providers: [UserService, TypeormService]
+  providers: [TypeormService]
 })
 export class ApiModule {}

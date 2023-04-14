@@ -4,6 +4,6 @@
   "sourceRoot": "src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "assets": ["api/common/env/*"]
+    "assets": ["common/env/*"]
   }
 }
